@@ -1,6 +1,5 @@
 import Image from "next/image";
 export default function SwitchChainDropDown(props: any) {
-  console.log("props---->", props);
   return (
     <div className={`${props.switchChainDropDown ? "block" : "hidden"}`}>
       <div

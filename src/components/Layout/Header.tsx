@@ -2,9 +2,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import SwitchChainDropDown from "@/components/Dropdown/SwitchChainDropDown";
+import { useChainContext } from "@/context/chainContext";
 export default function Header() {
   const [switchChainDropDown, setSwitchChainDropDown] = useState(false);
-  const [chain, setChain] = useState("tron")
+  const {chain, setChain} = useChainContext()
   const handleChangeSwitchChainDropDown = () => {
     setSwitchChainDropDown(!switchChainDropDown);
   };

@@ -37,8 +37,8 @@ export default function StakeModal(props: StakeModalProps) {
     }
   }
   useEffect(() => {
-    if (chain === "tron")
-      setCoin({ currency: "JOT", image: "/icon/coin/jot1.svg" });
+    if (chain === "litho")
+      setCoin({ currency: "LITHO", image: "/icon/coin/lithologo.svg" });
     else setCoin({ currency: "LITHO", image: "/icon/coin/litho.svg" });
   }, [chain]);
   useEffect(() => {
@@ -80,26 +80,26 @@ export default function StakeModal(props: StakeModalProps) {
                     color ? "bg-gradient-to-r from-[#3242F5] to-[#63D8EC]" : ""
                   } rounded-full text-[15px]`}
                   onClick={() => {
-                    if (chain === "tron") {
+                    if (chain === "litho") {
                       setLp("JotToTRX");
                     } else setLp("LithoToBNB");
                     setColor(true);
                   }}
                 >
-                  {chain === "tron" ? "JOT/TRX LP" : "LITHO/BNB LP"}
+                  {chain === "litho" ? "LITHO/TRX LP" : "LITHO/BNB LP"}
                 </button>
                 <button
                   className={`w-[50%] h-full ${
                     !color ? "bg-gradient-to-r from-[#3242F5] to-[#63D8EC]" : ""
                   } rounded-full text-[15px]`}
                   onClick={() => {
-                    if (chain === "tron") {
+                    if (chain === "litho") {
                       setLp("JotToUSDT")
                     } else setLp("LithoToBUSD");
                     setColor(false);
                   }}
                 >
-                  {chain === "tron" ? "JOT/USDT LP" : "LITHO/BUSD LP"}
+                  {chain === "litho" ? "LITHO/USDT LP" : "LITHO/BUSD LP"}
                 </button>
               </div>
               <div className="w-full p-[16px] mt-[15px] bg-[#1F1F1F] rounded-[8px] h-[115px] text-[14px] flex flex-col justify-between">
@@ -126,7 +126,7 @@ export default function StakeModal(props: StakeModalProps) {
                     Max
                   </button>
                   <button
-                    className="w-[112px] h-full bg-[#1F1F1F] border-[1px] border-[#272727] hover:bg-[#2e2e2e] ml-[5px] rounded-[6px]"
+                    className="w-[112px] h-full bg-[#1F1F1F] border-[1px] border-[#272727] hover:bg-[#2e2e2e] ml-[5px] rounded-[6px] px-[10px]"
                     onClick={() => {
                       setOpenDropDown(!openDropDown);
                     }}
@@ -137,10 +137,10 @@ export default function StakeModal(props: StakeModalProps) {
                         width={0}
                         height={0}
                         alt="Jot"
-                        className="w-[23px] h-auto mr-[10px]"
+                        className="w-[23px] h-auto mr-[5px]"
                       />
 
-                      <p className="text-[16px] mr-[10px]">{coin.currency}</p>
+                      <p className="text-[16px] mr-[5px]">{coin.currency}</p>
                       <Image
                         src={"/icon/dropdown.svg"}
                         width={0}
@@ -151,7 +151,7 @@ export default function StakeModal(props: StakeModalProps) {
                     </div>
                   </button>
                   {openDropDown ? (
-                    <div className="absolute top-[45px] w-full">
+                    <div className="absolute top-[50px] w-full">
                       <SetCurrencyDropDown
                         setOpenDropDown={setOpenDropDown}
                         chain={chain}

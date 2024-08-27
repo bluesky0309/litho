@@ -36,18 +36,18 @@ export default function Header() {
               }}
             >
               <Image
-                alt="tron icon"
+                alt="litho icon"
                 width={0}
                 height={0}
                 className="w-[24px] h-auto"
                 src={`${
-                  chain === "tron"
-                    ? "/icon/coin/tron.svg"
+                  chain === "litho"
+                    ? "/icon/coin/lithologo.svg"
                     : "/icon/coin/bsc.svg"
                 }`}
               />
               <p className="font-[400] text-[18px] sm:block hidden">
-                {chain === "tron" ? "TRON blockchain" : "BSC blockchain"}
+                {chain === "litho" ? "Lithosphere" : "BSC blockchain"}
               </p>
               <Image
                 alt="Drop down"

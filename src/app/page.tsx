@@ -54,58 +54,69 @@ export default function Home() {
           <>
             {activeStakes.map((item: ActiveStakes, index: number) => (
               <div
-                className="w-full h-[72px] bg-[#1C1C1CC9] mt-[15px] rounded-[15px] border-[1px] border-[#282828] py-[10px] px-[20px] grid md:grid-cols-7 grid-cols-2"
+                className="w-full lg:h-[72px] h-auto bg-[#1C1C1CC9] mt-[15px] rounded-[15px] border-[1px] border-[#282828] sm:py-[10px] py-[20px] px-[20px] grid md:grid-cols-7 grid-cols-2"
                 key={index}
               >
                 <div className="">
-                  <p className="text-[12px] text-[#7E7E7E]">Total staked:</p>
-                  <div className="inline-flex items-center mt-[5px]">
+                  <p className="text-[14px] text-[#7E7E7E]">Total staked:</p>
+                  <div className="inline-flex items-center">
                     <Image
                       alt="lp"
                       width={0}
                       height={0}
                       src={item.coin.image}
-                      className="w-[25px] h-auto ml-[10px]"
+                      className="w-[23px] h-[24px] ml-[10px]"
                     />
                     <Image
                       alt="litho"
                       width={0}
                       height={0}
                       src={"/icon/coin/litho.svg"}
-                      className="w-[25px] h-auto ml-[-35px]"
+                      className="w-[23px] h-[24px] ml-[-35px]"
                     />
+                    <p className="text-[20px] ml-[20px]">1,232.42</p>
                   </div>
                 </div>
-                <div className="">
-                  <p className="text-[12px] text-[#7E7E7E]">Multiplier:</p>
-                  <p className="mt-[3px] text-[18px]">{item.multiply}</p>
+                <div>
+                  <p className="text-[14px] text-[#7E7E7E]">Multiplier:</p>
+                  <p className="text-[20px]">{item.multiply}</p>
                 </div>
-                <div className="">
-                  <p className="text-[12px] text-[#7E7E7E]">
+                <div>
+                  <p className="text-[14px] text-[#7E7E7E]">
                     My % of the pool:
                   </p>
-                  <p className="mt-[3px] text-[18px]">36%</p>
+                  <p className="text-[20px]">36%</p>
                 </div>
-                <div className="">
-                  <p className="text-[12px] text-[#7E7E7E]">
+                <div>
+                  <p className="text-[14px] text-[#7E7E7E]">
                     Locked days left:
                   </p>
-                  <p className="mt-[3px] text-[18px]">{item.stakePeriod}</p>
+                  <p className="text-[20px]">{item.stakePeriod}</p>
                 </div>
-                <div className="">
+                <div>
                   <p className="text-[12px] text-[#7E7E7E]">Rewards:</p>
-                  <p className="mt-[3px] text-[18px]">{item.reward}</p>
+                  <div className="inline-flex items-center">
+                    <Image
+                      alt="lp"
+                      width={0}
+                      height={0}
+                      src={item.coin.image}
+                      className="w-[23px] h-[24px]"
+                    />
+                    <p className="text-[20px] ml-[5px]">{item.reward}</p>
+                  </div>
                 </div>
                 <div className="inline-flex h-full text-[12px] items-center col-span-2 justify-center">
-                  <button className="md:w-[150px] w-1/2 border-[1px] border-[#272727] rounded-[10px] h-[40px] hover:opacity-80">
+                  <button className="md:w-[143px] w-1/2 border-[1px] border-[#272727] rounded-[10px] h-[44px] hover:opacity-80 text-[16px]">
                     Unstake
                   </button>
-                  <button className="md:w-[150px] w-1/2 bg-gradient-to-r from-[#3242F5] to-[#63D8EC] rounded-[10px] h-[40px] ml-[10px] hover:opacity-80">
+                  <button className="md:w-[143px] w-1/2 bg-gradient-to-r from-[#3242F5] to-[#63D8EC] rounded-[10px] h-[44px] ml-[10px] hover:opacity-80 text-[16px]">
                     Claim
                   </button>
                 </div>
               </div>
             ))}
+            <div className="w-full h-[50px]"></div>
           </>
         )}
       </div>

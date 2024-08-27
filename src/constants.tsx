@@ -1,10 +1,10 @@
 import { Lp } from "@/types";
 export const JotToTRX: Lp[] = [
-  { currency: "JOT", image: "/icon/coin/jot1.svg" },
-  { currency: "TRX", image: "/icon/coin/tron.svg" },
+  { currency: "LITHO", image: "/icon/coin/lithologo.svg" },
+  { currency: "USDT", image: "/icon/coin/usdt.svg" },
 ];
 export const JotToUSDT: Lp[] = [
-  { currency: "JOT", image: "/icon/coin/jot1.svg" },
+  { currency: "LITHO", image: "/icon/coin/lithologo.svg" },
   { currency: "USDT", image: "/icon/coin/usdt.svg" },
 ];
 export const LithoToBNB: Lp[] = [

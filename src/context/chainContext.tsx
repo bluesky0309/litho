@@ -6,7 +6,7 @@ import React, {
 } from "react";  
 
 const ChainContext = createContext({  
-  chain: "tron",  
+  chain: "litho",  
   setChain: (chain: string) => {},  
 });  
 
@@ -19,7 +19,7 @@ export const ChainContextProvider = ({
 }: Readonly<{  
   children: React.ReactNode;  
 }>) => {  
-  const [chain, setChain] = useState("tron");  
+  const [chain, setChain] = useState("litho");  
 
   return (  
     <ChainContext.Provider value={{ chain, setChain }}>  

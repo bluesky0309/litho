@@ -2,7 +2,7 @@ import Image from "next/image";
 export default function LockupOverview() {
   return (
     <>
-      <div className="dashboard:w-[546px] w-full sm:h-[290px] h-[331px] bg-[#0000004A] rounded-[10px] border-[1px] border-[#272727] px-[20px] pt-[20px] sm:pb-[40px] pb-[20px]">
+      <div className="dashboard:w-[546px] w-full sm:h-[290px] h-[380px] bg-[#0000004A] rounded-[10px] border-[1px] border-[#272727] px-[20px] pt-[20px] sm:pb-[40px] pb-[20px]">
         <p className="text-[16px]">Jot Art Token Lockup Overview</p>
         <p className="text-[14px] text-[#7E7E7E] mt-[5px]">
           View liquidity and JOT lockup information
@@ -33,7 +33,7 @@ export default function LockupOverview() {
             <div className="w-[115px]">
               <p className="text-[#7E7E7E] ml-[5px] text-[16px]">JOT Locked:</p>
               <p className="text-[#4F4F4F] ml-[5px] text-[12px]">
-                Tron blockchain
+                Lithospheres blockchain
               </p>
             </div>
           </div>
@@ -53,7 +53,7 @@ export default function LockupOverview() {
           <p className="sm:text-right text-left text-[16px]">900,000,000.00 JOT</p>
         </div>
       </div>
-      <div className="w-full h-[20px] dashboard:hidden"></div>
+      <div className="w-full h-[20px] dashboard:hidden block"></div>
     </>
   );
 }

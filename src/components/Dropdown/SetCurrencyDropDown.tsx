@@ -11,7 +11,7 @@ export default function SetCurrencyDropDown(props: SwitchCurrencyDropDownProps) 
   const { chain } = useChainContext();
   const [stakeLp, setStakeLp] = useState<Lp[] | []>(JotToTRX);
   useEffect(() => {
-    if (chain === "tron") {
+    if (chain === "litho") {
       if (lp === "JotToTRX") setStakeLp(JotToTRX);
       else if (lp === "JotToUSDT") setStakeLp(JotToUSDT);
     } else {
@@ -22,7 +22,7 @@ export default function SetCurrencyDropDown(props: SwitchCurrencyDropDownProps) 
 
   return (
     <>
-      <div className="w-[199px] h-[137px] bg-[#121212] border-[1px] rounded-[15px] border-[#272727] py-[10px] px-[10px] z-30 absolute right-0 mt-[5px]">
+      <div className="w-[199px] h-[100px] bg-[#121212] border-[1px] rounded-[15px] border-[#272727] py-[10px] px-[10px] z-30 absolute right-0 mt-[5px]">
         {stakeLp.map((item: Lp, index: number) => (
           <button
             className="inline-flex items-center py-[5px] w-full hover:bg-[#1F1F1F] rounded-[8px] h-[36px] mb-[5px]"
@@ -42,25 +42,6 @@ export default function SetCurrencyDropDown(props: SwitchCurrencyDropDownProps) 
             <p className="text-[16px] ml-[9px]">{item.currency}</p>
           </button>
         ))}
-        <button className="w-full py-[5px] items-center inline-flex hover:bg-[#1F1F1F] rounded-[8px]">
-          <Image
-            src={stakeLp[1].image}
-            alt="first coin"
-            width={0}
-            height={0}
-            className="w-[23px] h-[24px] ml-[10px]"
-          />
-          <Image
-            src={stakeLp[0].image}
-            alt="first coin"
-            width={0}
-            height={0}
-            className="w-[23px] h-[24px] ml-[-30px]"
-          />
-          <p className="text-[16px] ml-[15px]">
-            {stakeLp[0].currency}/{stakeLp[1].currency} LP
-          </p>
-        </button>
       </div>
       <div
         className="fixed right-0 left-0 top-0 bottom-0"

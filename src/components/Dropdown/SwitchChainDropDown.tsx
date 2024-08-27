@@ -9,27 +9,28 @@ export default function SwitchChainDropDown(props: SwitchChainDropDownProps) {
         <p className="text-[20px]">Switch to</p>
         <div className="inline-flex items-center mt-[25px]">
           <Image
-            alt="Tron Icon"
+            alt="Litho Icon"
             width={0}
             height={0}
-            src="/icon/coin/tron.svg"
-            className="w-[17px] h-auto"
+            src="/icon/coin/lithologo.svg"
+            className="w-[20px] h-auto"
           />
-          <p className="text-[14px] ml-[5px]">TRON blockchain</p>
+          <p className="text-[14px] ml-[5px]">Lithosphere blockchain</p>
         </div>
         <button
           className="bg-[#1F1F1F] hover:bg-[#3b3b3b] w-full h-[62px] rounded-[11px] inline-flex items-center mt-[5px]"
           onClick={() => {
-            props.setChain("tron"), props.setSwitchChainDropDown(false);
+            props.setChain("litho"), props.setSwitchChainDropDown(false);
           }}
         >
           <Image
-            alt="Tron Link"
-            src="/icon/switchchain/TronLink.svg"
+            alt="Lithosphere wallet"
+            src="/icon/coin/lithologo.svg"
             width={0}
             height={0}
-            className="w-[126px] h-[30px] ml-[20px]"
+            className="w-[30px] h-[30px] ml-[20px]"
           />
+          <p className="text-[20px] ml-[10px]">Lithosphere</p>
         </button>
         <div className="inline-flex items-center mt-[20px]">
           <Image

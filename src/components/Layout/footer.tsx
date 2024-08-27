@@ -1,14 +1,14 @@
 import Image from "next/image";
 export default function Footer() {
   return (
-    <div className="w-full bg-[#121212] py-[25px] tablet:inline-flex items-center laptop:px-[100px] md:px-[50px] px-[20px] justify-between">
+    <div className="w-full md:h-[76px] sm:h-auto h-[200px] bg-[#121212] py-[25px] tablet:inline-flex items-center laptop:px-[100px] md:px-[50px] px-[20px] justify-between">
       <button>
         <Image
           src="/icon/footer/logotitle.svg"
           alt="Logo Title"
           width={0}
           height={0}
-          className="w-[120px] h-auto"
+          className="w-[134px] h-auto"
         />
       </button>
       <div className="sm:inline-flex sm:flex-row flex-col items-center tablet:mt-0 sm:mt-[10px] mt-[20px]">
@@ -19,7 +19,7 @@ export default function Footer() {
               alt="discord"
               width={0}
               height={0}
-              className="sm:w-[25px] w-[20px] h-auto"
+              className="w-[24px] h-auto"
             />
           </button>
           <button>
@@ -28,7 +28,7 @@ export default function Footer() {
               alt="github"
               width={0}
               height={0}
-              className="sm:w-[25px] w-[20px] h-auto"
+              className="w-[20px] h-auto"
             />
           </button>
           <button>
@@ -37,7 +37,7 @@ export default function Footer() {
               alt="raddit"
               width={0}
               height={0}
-              className="sm:w-[25px] w-[20px] h-auto"
+              className="w-[20px] h-auto"
             />
           </button>
           <button>
@@ -46,7 +46,7 @@ export default function Footer() {
               alt="twitter"
               width={0}
               height={0}
-              className="sm:w-[25px] w-[20px] h-auto"
+              className="w-[20px] h-auto"
             />
           </button>
           <button>
@@ -55,7 +55,7 @@ export default function Footer() {
               alt="youtube"
               width={0}
               height={0}
-              className="sm:w-[25px] w-[20px] h-auto"
+              className="w-[20px] h-auto"
             />
           </button>
         </div>
@@ -67,7 +67,7 @@ export default function Footer() {
                 alt="linkedin"
                 width={0}
                 height={0}
-                className="sm:w-[25px] w-[20px] h-auto"
+                className="w-[20px] h-auto"
               />
             </button>
             <button>
@@ -76,7 +76,7 @@ export default function Footer() {
                 alt="medium"
                 width={0}
                 height={0}
-                className="sm:w-[25px] w-[20px] h-auto"
+                className="w-[20px] h-auto"
               />
             </button>
             <button>
@@ -85,7 +85,7 @@ export default function Footer() {
                 alt="hand"
                 width={0}
                 height={0}
-                className="sm:w-[25px] w-[20px] h-auto"
+                className="w-[20px] h-auto"
               />
             </button>
             <button>
@@ -94,19 +94,19 @@ export default function Footer() {
                 alt="coinmarketcap"
                 width={0}
                 height={0}
-                className="sm:w-[25px] w-[20px] h-auto"
+                className="w-[20px] h-auto"
               />
             </button>
           </div>
-          <button className="w-[145px] h-[40px] rounded-[10px] border-[1px] border-[#6B9EF0] inline-flex items-center justify-center">
+          <button className="w-[143px] h-[44px] rounded-[10px] border-[1px] border-[#6B9EF0] inline-flex items-center justify-center">
             <Image
               src={"/icon/footer/telegram.svg"}
               width={0}
               height={0}
               alt="telegram"
-              className="sm:w-[25px] w-[20px] h-auto"
+              className="w-[18px] h-[15px]"
             />
-            <p className="ml-[15px]">Telegram</p>
+            <p className="ml-[15px] text-[16px]">Telegram</p>
           </button>
         </div>
       </div>

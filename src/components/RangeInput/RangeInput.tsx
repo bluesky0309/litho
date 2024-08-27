@@ -1,11 +1,12 @@
-export default function RangeInput(props: any) {
+import { RangeInputProps } from "@/types";
+export default function RangeInput(props: RangeInputProps) {
   return (
     <>
       <input
         type="range"
         className="w-full bg-black cursor-pointer accent-[#3242F5] disabled:opacity-50 disabled:pointer-events-none focus:outline-none ring-white
-        [&::-webkit-slider-thumb]:w-[14px]
-        [&::-webkit-slider-thumb]:h-[14px]
+        [&::-webkit-slider-thumb]:w-[100px]
+        [&::-webkit-slider-thumb]:h-[100px]
         [&::-webkit-slider-thumb]:-mt-[5px]
         [&::-webkit-slider-thumb]:appearance-none
       [&::-webkit-slider-thumb]:bg-black
@@ -36,7 +37,7 @@ export default function RangeInput(props: any) {
         id="basic-range-slider-usage"
         aria-orientation="horizontal"
         value={props.stakePeriod}
-        onChange={(e) => {props.setStakePeriod(e.target.value)}}
+        onChange={(e) => {props.setStakePeriod(parseInt(e.target.value))}}
         max={100}
         min={1}
         step={1}

@@ -4,6 +4,11 @@ import Image from "next/image";
 import LockupOverview from "@/components/staking/LockupOverview";
 import StakeModal from "@/components/modal/StakeModal";
 import { ActiveStakes } from "@/types";
+// import ApproveModal1 from "@/components/modal/ApproveModal1";
+// import ApproveModal2 from "@/components/modal/ApproveModal2";
+// import ApproveModal3 from "@/components/modal/ApproveModal3";
+// import ApproveModal4 from "@/components/modal/ApproveModal4";
+// import ApproveModal5 from "@/components/modal/ApproveModal5";
 export default function Home() {
   const [stakeModal, setStakeModal] = useState(false);
   const [activeStakes, setActiveStakes] = useState<ActiveStakes[] | []>([]);
@@ -13,7 +18,7 @@ export default function Home() {
         <h1 className="text-[36px] sm:mt-[50px] mt-[20px] font-[400]">Stake</h1>
         <div className="dashboard:flex block justify-between w-full sm:mt-[30px] mt-[15px]">
           <div className="sm:w-[430px] w-full mb-[30px]">
-            <p className="text-[16px] text-gray-500 font-[400]">JOT price:</p>
+            <p className="text-[16px] text-gray-500 font-[400]">LITHO price:</p>
             <div className="inline-flex items-center mt-[15px]">
               <Image
                 src={"/icon/coin/litho.svg"}
@@ -127,6 +132,11 @@ export default function Home() {
         activeStakes={activeStakes}
       />
       <div className="absolute w-full h-[50%] bg-gradient-radial top-0 z-0"></div>
+      {/* <ApproveModal1/> */}
+      {/* <ApproveModal2/> */}
+      {/* <ApproveModal3 /> */}
+      {/* <ApproveModal4 /> */}
+      {/* <ApproveModal5 /> */}
     </div>
   );
 }

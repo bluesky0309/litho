@@ -3,17 +3,17 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useLpContext } from "@/context/LpContext";
 import { useChainContext } from "@/context/chainContext";
-import { JotToTRX, JotToUSDT, LithoToBNB, LithoToBUSD } from "@/constants";
+import { LithoToTRX, LithoToUSDT, LithoToBNB, LithoToBUSD } from "@/constants";
 import { Lp, SwitchCurrencyDropDownProps } from "@/types";
 
 export default function SetCurrencyDropDown(props: SwitchCurrencyDropDownProps) {
   const { lp } = useLpContext();
   const { chain } = useChainContext();
-  const [stakeLp, setStakeLp] = useState<Lp[] | []>(JotToTRX);
+  const [stakeLp, setStakeLp] = useState<Lp[] | []>(LithoToTRX);
   useEffect(() => {
     if (chain === "litho") {
-      if (lp === "JotToTRX") setStakeLp(JotToTRX);
-      else if (lp === "JotToUSDT") setStakeLp(JotToUSDT);
+      if (lp === "LithoToTRX") setStakeLp(LithoToTRX);
+      else if (lp === "LithoToUSDT") setStakeLp(LithoToUSDT);
     } else {
       if (lp === "LithoToBNB") setStakeLp(LithoToBNB);
       else setStakeLp(LithoToBUSD);

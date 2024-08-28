@@ -1,13 +1,39 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import SwitchChainDropDown from "@/components/Dropdown/SwitchChainDropDown";
 import { useChainContext } from "@/context/chainContext";
+import { useDisconnect, useActiveWallet } from "thirdweb/react";
+import { createThirdwebClient } from "thirdweb";
+import { createWallet, WalletId, Wallet } from "thirdweb/wallets";
+import { shortenAddress } from "@/utils/function";
+import { DisconnectDropDown } from "../Dropdown/DisconnectDropDown";
 export default function Header() {
+  const client = createThirdwebClient({
+    clientId: process.env.NEXT_PUBLIC_THIRDWEB_API_KEY as string,
+  });
+  const wallet = useActiveWallet();
+  const { disconnect } = useDisconnect();
   const [switchChainDropDown, setSwitchChainDropDown] = useState(false);
   const { chain, setChain } = useChainContext();
+  const [address, setAddress] = useState("");
   const handleChangeSwitchChainDropDown = () => {
     setSwitchChainDropDown(!switchChainDropDown);
+  };
+  const [openDisconnectModal, setOpenDisconnectModal] = useState(false);
+  const [walletId, setWalletId] = useState<WalletId>("pro.tokenpocket");
+  const disconnectWallet = () => {
+    if (wallet) disconnect(wallet);
+    setAddress("");
+  };
+  const connectWallet = async (walletName: WalletId) => {
+    console.log("walletName---->", walletName);
+    const wallet = createWallet(walletName);
+    const account = await wallet.connect({
+      client,
+    });
+    console.log("account");
+    setAddress(account.address);
   };
   return (
     <div className="w-full h-[87px] bg-[#121212] inline-flex items-center justify-between laptop:px-[100px] md:px-[50px] px-[20px]">
@@ -27,10 +53,10 @@ export default function Header() {
           </p>
         </button>
 
-        <div className="h-[40px] inline-flex">
+        <div className="h-[44px] inline-flex">
           <div className="h-full">
             <button
-              className="sm:w-[230px] w-[77px] h-full inline-flex items-center rounded-[10px] bg-[#1D1D1D] px-[10px] sm:px-[20px] hover:bg-[#353535] relative py-[10px] justify-between"
+              className="sm:w-[217px] w-[77px] h-full inline-flex items-center rounded-[10px] bg-[#1D1D1D] px-[10px] sm:px-[20px] hover:bg-[#353535] relative py-[10px] justify-between"
               onClick={() => {
                 handleChangeSwitchChainDropDown();
               }}
@@ -61,11 +87,29 @@ export default function Header() {
               switchChainDropDown={switchChainDropDown}
               setSwitchChainDropDown={setSwitchChainDropDown}
               setChain={setChain}
+              setWalletId={setWalletId}
             />
           </div>
-          <button className="border-[#FFFFFF50] border-[1px] h-full rounded-[10px] text-[15px] font-[400] ml-[20px] w-[145px]">
-            Connect Wallet
-          </button>
+          <div className="relative">
+            <button
+              className="border-[#FFFFFF50] border-[1px] h-full rounded-[10px] text-[15px] font-[400] ml-[20px] sm:w-[175px] w-[141px] hover:opacity-80"
+              onClick={() => {
+                if (address) setOpenDisconnectModal(true);
+                else {
+                  connectWallet(walletId);
+                }
+              }}
+            >
+              {address ? shortenAddress(address) : "Connect Wallet"}
+            </button>
+            {openDisconnectModal ? (
+              <DisconnectDropDown
+                chain={chain}
+                setOpenDisconnectModal={setOpenDisconnectModal}
+                disconnectWallet={disconnectWallet}
+              />
+            ) : null}
+          </div>
         </div>
       </div>
     </div>

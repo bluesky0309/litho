@@ -6,44 +6,43 @@ import { useChainContext } from "@/context/chainContext";
 import RangeInput from "@/components/RangeInput/RangeInput";
 import SetCurrencyDropDown from "@/components/Dropdown/SetCurrencyDropDown";
 import { useLpContext } from "@/context/LpContext";
-import { StakeModalProps, Coin } from "@/types"; 
+import { StakeModalProps, Coin } from "@/types";
 export default function StakeModal(props: StakeModalProps) {
   const { lp, setLp } = useLpContext();
   const [info, setInfo] = useState(false);
   const [color, setColor] = useState(true);
-  const [amount, setAmount] = useState("0.00");
+  const [amount, setAmount] = useState("");
   const [stakePeriod, setStakePeriod] = useState(23);
   const [coin, setCoin] = useState<Coin>({
-    currency: "JOT",
+    currency: "LITHO",
     image: "/icon/coin/litho1.svg",
   });
   const [openDropDown, setOpenDropDown] = useState(false);
   const { chain } = useChainContext();
   const handleStake = () => {
-    if (amount === "") {toast.error("Please Input Stake Amount")}
-    else {
+    if (amount === "") {
+      toast.error("Please Input Stake Amount");
+    } else {
       const stake = {
         amount: parseFloat(amount),
         stakePeriod: stakePeriod,
         lp: lp,
         multiply: 1.5,
         reward: 1400,
-        coin: coin
-      }
+        coin: coin,
+      };
       props.setActiveStakes([...props.activeStakes, stake]);
-      setAmount('0.00');
+      setAmount("");
       setStakePeriod(23);
       props.setStakeModal(false);
     }
-  }
+  };
   useEffect(() => {
     if (chain === "litho")
       setCoin({ currency: "LITHO", image: "/icon/coin/lithologo.svg" });
     else setCoin({ currency: "LITHO", image: "/icon/coin/litho.svg" });
   }, [chain]);
-  useEffect(() => {
-
-  }, [stakePeriod])
+  useEffect(() => {}, [stakePeriod]);
   return (
     <>
       {props.stakeModal && (
@@ -81,7 +80,7 @@ export default function StakeModal(props: StakeModalProps) {
                   } rounded-full text-[15px]`}
                   onClick={() => {
                     if (chain === "litho") {
-                      setLp("JotToTRX");
+                      setLp("LithoToTRX");
                     } else setLp("LithoToBNB");
                     setColor(true);
                   }}
@@ -94,7 +93,7 @@ export default function StakeModal(props: StakeModalProps) {
                   } rounded-full text-[15px]`}
                   onClick={() => {
                     if (chain === "litho") {
-                      setLp("JotToUSDT")
+                      setLp("LithoToUSDT");
                     } else setLp("LithoToBUSD");
                     setColor(false);
                   }}
@@ -105,13 +104,11 @@ export default function StakeModal(props: StakeModalProps) {
               <div className="w-full p-[16px] mt-[15px] bg-[#1F1F1F] rounded-[8px] h-[115px] text-[14px] flex flex-col justify-between">
                 <div className="w-full inline-flex justify-between">
                   <p className="text-[#7E7E7E]">Total staked:</p>
-                  <p>12.22 JOT/TRX LP</p>
+                  <p>12.22 LITHO/TRX LP</p>
                 </div>
                 <div className="w-full inline-flex justify-between">
-                  <p className="text-[#7E7E7E]">
-                    Remaining rewards:
-                  </p>
-                  <p className="text-right">2900000 of 50 000 000 JOT</p>
+                  <p className="text-[#7E7E7E]">Remaining rewards:</p>
+                  <p className="text-right">2900000 of 50 000 000 LITHO</p>
                 </div>
                 <div className="w-full inline-flex justify-between">
                   <p className="text-[#7E7E7E]">APY:</p>
@@ -120,7 +117,15 @@ export default function StakeModal(props: StakeModalProps) {
               </div>
               <p className="text-[14px] text-[#7E7E7E] mt-[13px]">Amount</p>
               <div className="relative w-full mt-[13px]">
-                <input className="w-full bg-black rounded-[10px] h-[56px] px-[16px] py-[16px] border-[#272727] border-[1px] focus:outline-none text-[24px]" value={amount} type="number" onChange={(e) => {setAmount(e.target.value)}} />
+                <input
+                  className="w-full bg-black rounded-[10px] h-[56px] px-[16px] py-[16px] border-[#272727] border-[1px] focus:outline-none text-[24px] placeholder:text-[#272727]"
+                  value={amount}
+                  placeholder="0.00"
+                  type="number"
+                  onChange={(e) => {
+                    setAmount(e.target.value);
+                  }}
+                />
                 <div className="absolute right-[10px] inline-flex h-full py-[10px]">
                   <button className="w-[62px] h-full bg-[#413D17] rounded-[6px] text-[#FACC14] hover:bg-[#464119] text-[16px]">
                     Max
@@ -136,7 +141,7 @@ export default function StakeModal(props: StakeModalProps) {
                         src={coin.image}
                         width={0}
                         height={0}
-                        alt="Jot"
+                        alt="Litho"
                         className="w-[23px] h-auto mr-[5px]"
                       />
 
@@ -162,7 +167,7 @@ export default function StakeModal(props: StakeModalProps) {
                 </div>
               </div>
               <p className="text-[14px] text-[#7E7E7E] mt-[10px]">
-                Balance: 12,452.22 JOT
+                Balance: 12,452.22 LITHO
               </p>
               <p className="text-[14px] text-[#7E7E7E] mt-[5px]">
                 We will automatically provide the liquidity and stake LP
@@ -197,9 +202,19 @@ export default function StakeModal(props: StakeModalProps) {
                   </p>
                 </div>
               </div>
-              <input className="w-[95px] h-[44px] bg-black rounded-[10px] px-[20px] py-[10px] border-[#272727] border-[1px] focus:outline-none mt-[5px] text-[24px] flex items-center justify-center text-center" type="number" value={stakePeriod} onChange={(e) => {setStakePeriod(parseFloat(e.target.value))}}></input>
+              <input
+                className="w-[95px] h-[44px] bg-black rounded-[10px] px-[20px] py-[10px] border-[#272727] border-[1px] focus:outline-none mt-[5px] text-[24px] flex items-center justify-center text-center"
+                type="number"
+                value={stakePeriod}
+                onChange={(e) => {
+                  setStakePeriod(parseFloat(e.target.value));
+                }}
+              ></input>
               <div className="w-full mt-[10px]">
-                <RangeInput stakePeriod={stakePeriod} setStakePeriod={setStakePeriod}/>
+                <RangeInput
+                  stakePeriod={stakePeriod}
+                  setStakePeriod={setStakePeriod}
+                />
               </div>
               <div className="w-full inline-flex justify-between items-center">
                 <p className="text-[14px] text-[#7E7E7E] mt-[10px]">
@@ -209,11 +224,16 @@ export default function StakeModal(props: StakeModalProps) {
                   x1,5
                 </div>
               </div>
-              <div className="w-full h-[33px] bg-[#1F1F1F] rounded-[10px] mt-[10px] flex items-center justify-center text-[14px]">
+              <div className="w-full h-[33px] bg-[#1F1F1F] rounded-[5px] mt-[10px] flex items-center justify-center text-[14px]">
                 2% fee is charged when you stake or unstake.
               </div>
               <div className="w-full h-[44px] flex items-center justify-center mt-[10px]">
-                <button className="w-[143px] h-full bg-gradient-to-r from-[#3242F5] to-[#63D8EC] mt-[30px] rounded-[10px] text-[15px]" onClick={() => {handleStake()}}>
+                <button
+                  className="w-[143px] h-full bg-gradient-to-r from-[#3242F5] to-[#63D8EC] mt-[30px] rounded-[10px] text-[15px]"
+                  onClick={() => {
+                    handleStake();
+                  }}
+                >
                   Stake
                 </button>
               </div>

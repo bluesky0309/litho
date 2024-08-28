@@ -1,9 +1,9 @@
 import { Lp } from "@/types";
-export const JotToTRX: Lp[] = [
+export const LithoToTRX: Lp[] = [
   { currency: "LITHO", image: "/icon/coin/lithologo.svg" },
   { currency: "USDT", image: "/icon/coin/usdt.svg" },
 ];
-export const JotToUSDT: Lp[] = [
+export const LithoToUSDT: Lp[] = [
   { currency: "LITHO", image: "/icon/coin/lithologo.svg" },
   { currency: "USDT", image: "/icon/coin/usdt.svg" },
 ];

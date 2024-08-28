@@ -6,7 +6,7 @@ import React, {
 } from "react";  
 
 const LpContext = createContext({  
-  lp: "JotToTRX",  
+  lp: "LithoToTRX",  
   setLp: (lp: string) => {},  
 });  
 
@@ -19,7 +19,7 @@ export const LpContextProvider = ({
 }: Readonly<{  
   children: React.ReactNode;  
 }>) => {  
-  const [lp, setLp] = useState("JotToTRX");  
+  const [lp, setLp] = useState("LithoToTRX");  
 
   return (  
     <LpContext.Provider value={{ lp, setLp }}>  

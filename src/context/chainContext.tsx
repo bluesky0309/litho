@@ -19,7 +19,7 @@ export const ChainContextProvider = ({
 }: Readonly<{  
   children: React.ReactNode;  
 }>) => {  
-  const [chain, setChain] = useState("litho");  
+  const [chain, setChain] = useState<string>("litho");  
 
   return (  
     <ChainContext.Provider value={{ chain, setChain }}>  

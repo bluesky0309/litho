@@ -1,3 +1,4 @@
+import { WalletId, Wallet } from "thirdweb/wallets";
 export type Lp = { currency: string; image: string };
 export type SwitchCurrencyDropDownProps = {
   setOpenDropDown: (open: boolean) => void;
@@ -26,8 +27,14 @@ export type SwitchChainDropDownProps = {
   switchChainDropDown: boolean;
   setSwitchChainDropDown: React.Dispatch<React.SetStateAction<boolean>>;
   setChain: (chain: string) => void;
+  setWalletId: React.Dispatch<React.SetStateAction<WalletId>>;
 }
 export type RangeInputProps = {
   stakePeriod: number;
   setStakePeriod: React.Dispatch<React.SetStateAction<number>>;
+}
+export type DisconnectDropDownProps = {
+  chain: string;
+  setOpenDisconnectModal: React.Dispatch<React.SetStateAction<boolean>>;
+  disconnectWallet: () => void;
 }

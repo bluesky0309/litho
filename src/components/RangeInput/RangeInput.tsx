@@ -13,7 +13,7 @@ const RangeSlider = (props: RangeInputProps) => {
     if (rangeRef.current) {
       rangeRef.current.style.background = `linear-gradient(to right, #3242F5 0%, #63D8EC ${progress}%, #FFFFFF4D ${progress}%)`;
     }
-    props.setStakePeriod(value);
+    props.setStakePeriod(Number(event.target.value));
   };
 
   return (

@@ -15,7 +15,7 @@ This project is the frontend for Litho Staking Dashboard. It is built on top of 
 
 ### Running the App Locally
 
-- Ensure you have the latest `nodejs` and `npm` installed. Prefer `node` v20.16.0 `npm` 10.8.1
+- Ensure you have the latest `nodejs` and `npm` installed. Prefer `node` 20+ `npm` 10.8.1
 - Ensure you have `npm` installed.
 - Clone this repo
 - Run `npm install` on the repo to install `node_modules`

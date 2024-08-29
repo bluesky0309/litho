@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="https://quran.com">
-    <img src="/icon/logo.svg" alt="Logo" width="80" height="80">
+    <img src="public/icon/logo.svg" alt="Logo" width="80" height="80">
   </a>
 
   <h1 align="center">Litho Staking</h1>

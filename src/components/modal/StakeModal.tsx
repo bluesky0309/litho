@@ -12,7 +12,7 @@ export default function StakeModal(props: StakeModalProps) {
   const [info, setInfo] = useState(false);
   const [color, setColor] = useState(true);
   const [amount, setAmount] = useState("");
-  const [stakePeriod, setStakePeriod] = useState(23);
+  const [stakePeriod, setStakePeriod] = useState(0);
   const [coin, setCoin] = useState<Coin>({
     currency: "LITHO",
     image: "/icon/coin/litho1.svg",
@@ -33,7 +33,7 @@ export default function StakeModal(props: StakeModalProps) {
       };
       props.setActiveStakes([...props.activeStakes, stake]);
       setAmount("");
-      setStakePeriod(23);
+      setStakePeriod(0);
       props.setStakeModal(false);
     }
   };
@@ -62,6 +62,8 @@ export default function StakeModal(props: StakeModalProps) {
                 <button
                   onClick={() => {
                     props.setStakeModal(false);
+                    setAmount("");
+                    setStakePeriod(0);
                   }}
                 >
                   <Image

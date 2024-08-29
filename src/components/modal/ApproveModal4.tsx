@@ -1,16 +1,18 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
+import { useOpenApproveModalContext } from "@/context/ApproveModalContext";
 export default function ApproveModal4() {
   const [link, setLink] = useState<string>("");
   const handleCopyLink = () => {
     navigator.clipboard.writeText(link);
   };
+  const { setOpenApproveModal } = useOpenApproveModalContext();
   return (
     <>
       <div className="fixed top-0 bottom-0 left-0 right-0 flex items-center justify-center z-40">
-        <div className="w-[627px] h-[439px] relative bg-[#121212] border-[1px] border-[#272727] rounded-[30px] flex items-center justify-center">
-          <div>
+        <div className="sm:w-[627px] sm:h-[439px] w-full h-full px-[20px] relative bg-[#121212] border-[1px] border-[#272727] sm:rounded-[30px] rounded-none flex items-center justify-center">
+          <div className="w-full">
             <div className="w-full text-center inline-flex justify-center">
               <p className="text-[20px]">STEP 2/2</p>
               <p className="bg-gradient-to-r from-[#3242F5] to-[#63D8EC] bg-clip-text text-transparent text-[20px] ml-[10px]">
@@ -33,7 +35,7 @@ export default function ApproveModal4() {
               It takes some time for transaction <br /> to get confirmed.
             </p>
             <div className="w-full inline-flex items-center justify-center mt-[20px]">
-              <div className="w-[482px] h-[56px] relative">
+              <div className="sm:w-[482px] w-full h-[56px] relative">
                 <input
                   className="w-full h-full rounded-[8px] border-[1px] border-[#272727] flex items-center focus:outline-none px-[20px] bg-black text-[16px]"
                   onChange={(e) => setLink(e.target.value)}
@@ -53,7 +55,12 @@ export default function ApproveModal4() {
               </div>
             </div>
           </div>
-          <button className="absolute top-[30px] right-[30px]">
+          <button
+            className="absolute top-[30px] right-[30px]"
+            onClick={() => {
+              setOpenApproveModal(0);
+            }}
+          >
             <Image
               className="w-[16px] h-[16px]"
               alt="close"
@@ -64,6 +71,7 @@ export default function ApproveModal4() {
           </button>
         </div>
       </div>
+      <div className="fixed top-0 bottom-0 left-0 right-0 bg-[#121212] opacity-80 z-30"></div>
     </>
   );
 }

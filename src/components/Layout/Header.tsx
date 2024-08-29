@@ -1,11 +1,11 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import SwitchChainDropDown from "@/components/Dropdown/SwitchChainDropDown";
 import { useChainContext } from "@/context/chainContext";
 import { useDisconnect, useActiveWallet } from "thirdweb/react";
 import { createThirdwebClient } from "thirdweb";
-import { createWallet, WalletId, Wallet } from "thirdweb/wallets";
+import { createWallet, WalletId } from "thirdweb/wallets";
 import { shortenAddress } from "@/utils/function";
 import { DisconnectDropDown } from "../Dropdown/DisconnectDropDown";
 export default function Header() {
@@ -27,12 +27,10 @@ export default function Header() {
     setAddress("");
   };
   const connectWallet = async (walletName: WalletId) => {
-    console.log("walletName---->", walletName);
     const wallet = createWallet(walletName);
     const account = await wallet.connect({
       client,
     });
-    console.log("account");
     setAddress(account.address);
   };
   return (

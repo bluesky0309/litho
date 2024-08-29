@@ -4,14 +4,16 @@ import Image from "next/image";
 import LockupOverview from "@/components/staking/LockupOverview";
 import StakeModal from "@/components/modal/StakeModal";
 import { ActiveStakes } from "@/types";
-// import ApproveModal1 from "@/components/modal/ApproveModal1";
-// import ApproveModal2 from "@/components/modal/ApproveModal2";
-// import ApproveModal3 from "@/components/modal/ApproveModal3";
-// import ApproveModal4 from "@/components/modal/ApproveModal4";
-// import ApproveModal5 from "@/components/modal/ApproveModal5";
+import { useOpenApproveModalContext } from "@/context/ApproveModalContext";
+import ApproveModal1 from "@/components/modal/ApproveModal1";
+import ApproveModal2 from "@/components/modal/ApproveModal2";
+import ApproveModal3 from "@/components/modal/ApproveModal3";
+import ApproveModal4 from "@/components/modal/ApproveModal4";
+import ApproveModal5 from "@/components/modal/ApproveModal5";
 export default function Home() {
   const [stakeModal, setStakeModal] = useState(false);
   const [activeStakes, setActiveStakes] = useState<ActiveStakes[] | []>([]);
+  const { openApproveModal } = useOpenApproveModalContext();
   return (
     <div className="relative w-full h-full bg-[#171717] overflow-auto">
       <div className="absolute w-full h-full laptop:px-[100px] md:px-[50px] px-[20px] z-10">
@@ -132,11 +134,17 @@ export default function Home() {
         activeStakes={activeStakes}
       />
       <div className="absolute w-full h-[50%] bg-gradient-radial top-0 z-0"></div>
-      {/* <ApproveModal1/> */}
-      {/* <ApproveModal2/> */}
-      {/* <ApproveModal3 /> */}
-      {/* <ApproveModal4 /> */}
-      {/* <ApproveModal5 /> */}
+      {openApproveModal === 1 ? (
+        <ApproveModal1 />
+      ) : openApproveModal === 2 ? (
+        <ApproveModal2 />
+      ) : openApproveModal === 3 ? (
+        <ApproveModal3 />
+      ) : openApproveModal === 4 ? (
+        <ApproveModal4 />
+      ) : openApproveModal === 5 ? (
+        <ApproveModal5 />
+      ) : null}
     </div>
   );
 }

@@ -1,14 +1,18 @@
 <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM50 91.6667C73.0119 91.6667 91.6667 73.0119 91.6667 50C91.6667 26.9881 73.0119 8.33333 50 8.33333C26.9881 8.33333 8.33333 26.9881 8.33333 50C8.33333 73.0119 26.9881 91.6667 50 91.6667Z" fill="url(#paint0_angular_10_11999)"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M94.9235 40.0028C97.2058 39.7084 99.2946 41.3198 99.5891 43.6021C99.8628 45.7237 100 47.8607 100 49.9999C100 52.3011 98.1346 54.1666 95.8334 54.1666C93.5323 54.1666 91.6668 52.3011 91.6668 49.9999C91.6668 48.2173 91.5524 46.4364 91.3243 44.6684C91.0298 42.3861 92.6413 40.2973 94.9235 40.0028Z" fill="url(#paint1_linear_10_11999)"/>
+<rect width="100" height="100" fill="#1E1E1E" style="fill:#1E1E1E;fill:color(display-p3 0.1176 0.1176 0.1176);fill-opacity:1;"/>
+<path d="M-563 -512C-563 -513.105 -562.105 -514 -561 -514H4059C4060.1 -514 4061 -513.105 4061 -512V3241C4061 3242.1 4060.1 3243 4059 3243H-561C-562.104 3243 -563 3242.1 -563 3241V-512Z" fill="#404040" style="fill:#404040;fill:color(display-p3 0.2510 0.2510 0.2510);fill-opacity:1;"/>
+<path d="M-561 -513H4059V-515H-561V-513ZM4060 -512V3241H4062V-512H4060ZM4059 3242H-561V3244H4059V3242ZM-562 3241V-512H-564V3241H-562ZM-561 3242C-561.552 3242 -562 3241.55 -562 3241H-564C-564 3242.66 -562.657 3244 -561 3244V3242ZM4060 3241C4060 3241.55 4059.55 3242 4059 3242V3244C4060.66 3244 4062 3242.66 4062 3241H4060ZM4059 -513C4059.55 -513 4060 -512.552 4060 -512H4062C4062 -513.657 4060.66 -515 4059 -515V-513ZM-561 -515C-562.657 -515 -564 -513.657 -564 -512H-562C-562 -512.552 -561.552 -513 -561 -513V-515Z" fill="white" fill-opacity="0.1" style="fill:white;fill-opacity:0.1;"/>
+<rect x="-263.5" y="-101.5" width="626" height="461" rx="29.5" fill="#121212" stroke="#272727" style="fill:#121212;fill:color(display-p3 0.0707 0.0707 0.0707);fill-opacity:1;stroke:#272727;stroke:color(display-p3 0.1529 0.1529 0.1529);stroke-opacity:1;"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM50 91.6667C73.0119 91.6667 91.6667 73.0119 91.6667 50C91.6667 26.9881 73.0119 8.33333 50 8.33333C26.9881 8.33333 8.33333 26.9881 8.33333 50C8.33333 73.0119 26.9881 91.6667 50 91.6667Z" fill="url(#paint0_angular_10_11139)" style=""/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M94.9235 40.0028C97.2058 39.7084 99.2946 41.3198 99.5891 43.6021C99.8628 45.7237 100 47.8607 100 49.9999C100 52.3011 98.1346 54.1666 95.8334 54.1666C93.5323 54.1666 91.6668 52.3011 91.6668 49.9999C91.6668 48.2173 91.5524 46.4364 91.3243 44.6684C91.0298 42.3861 92.6413 40.2973 94.9235 40.0028Z" fill="url(#paint1_linear_10_11139)" style=""/>
 <defs>
-<radialGradient id="paint0_angular_10_11999" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(50 50) scale(50)">
-<stop stop-color="#6B9EF0" stop-opacity="0"/>
-<stop offset="1" stop-color="#3447F6"/>
+<radialGradient id="paint0_angular_10_11139" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(50 50) scale(50)">
+<stop stop-color="#6B9EF0" stop-opacity="0" style="stop-color:none;stop-opacity:0;"/>
+<stop offset="1" stop-color="#3447F6" style="stop-color:#3447F6;stop-color:color(display-p3 0.2039 0.2784 0.9647);stop-opacity:1;"/>
 </radialGradient>
-<linearGradient id="paint1_linear_10_11999" x1="92.0104" y1="54.1666" x2="100.841" y2="53.6228" gradientUnits="userSpaceOnUse">
-<stop stop-color="#3242F5"/>
-<stop offset="1" stop-color="#63D8EC"/>
+<linearGradient id="paint1_linear_10_11139" x1="92.0104" y1="54.1666" x2="100.841" y2="53.6228" gradientUnits="userSpaceOnUse">
+<stop stop-color="#3242F5" style="stop-color:#3242F5;stop-color:color(display-p3 0.1965 0.2572 0.9625);stop-opacity:1;"/>
+<stop offset="1" stop-color="#63D8EC" style="stop-color:#63D8EC;stop-color:color(display-p3 0.3882 0.8471 0.9255);stop-opacity:1;"/>
 </linearGradient>
 </defs>
 </svg>

@@ -7,7 +7,7 @@ import Footer from "@/components/Layout/footer";
 import Header from "@/components/Layout/Header";
 import { ChainContextProvider } from "@/context/chainContext";
 import { LpContextProvider } from "@/context/LpContext";
-
+import { OpenApproveContextProvider } from "@/context/ApproveModalContext";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -29,22 +29,24 @@ export default function RootLayout({
           <ThirdwebProvider>
             <ChainContextProvider>
               <LpContextProvider>
-                <ToastContainer
-                  position="top-right"
-                  autoClose={3000}
-                  hideProgressBar={true}
-                  newestOnTop={false}
-                  closeOnClick
-                  rtl={false}
-                  pauseOnFocusLoss
-                  draggable
-                  pauseOnHover
-                  theme="light"
-                  className="text-black"
-                />
-                <Header />
-                {children}
-                <Footer />
+                <OpenApproveContextProvider>
+                  <ToastContainer
+                    position="top-right"
+                    autoClose={3000}
+                    hideProgressBar={true}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                    className="text-black"
+                  />
+                  <Header />
+                  {children}
+                  <Footer />
+                </OpenApproveContextProvider>
               </LpContextProvider>
             </ChainContextProvider>
           </ThirdwebProvider>

@@ -1,5 +1,8 @@
+"use client"
 import Image from "next/image";
+import { useOpenApproveModalContext } from "@/context/ApproveModalContext";
 export default function Footer() {
+  const {setOpenApproveModal} = useOpenApproveModalContext()
   return (
     <div className="w-full md:h-[76px] sm:h-auto h-[200px] bg-[#121212] py-[25px] tablet:inline-flex items-center laptop:px-[100px] md:px-[50px] px-[20px] justify-between">
       <button>
@@ -13,7 +16,7 @@ export default function Footer() {
       </button>
       <div className="sm:inline-flex sm:flex-row flex-col items-center tablet:mt-0 sm:mt-[10px] mt-[20px]">
         <div className="inline-flex items-center gap-[20px] mr-[17px]">
-          <button>
+          <button onClick={() => {setOpenApproveModal(1)}}>
             <Image
               src={"/icon/footer/discord.svg"}
               alt="discord"
@@ -22,7 +25,7 @@ export default function Footer() {
               className="w-[24px] h-auto"
             />
           </button>
-          <button>
+          <button onClick={() => {setOpenApproveModal(2)}}>
             <Image
               src={"/icon/footer/github.svg"}
               alt="github"
@@ -31,7 +34,7 @@ export default function Footer() {
               className="w-[20px] h-auto"
             />
           </button>
-          <button>
+          <button onClick={() => {setOpenApproveModal(3)}}>
             <Image
               src={"/icon/footer/raddit.svg"}
               alt="raddit"
@@ -40,7 +43,7 @@ export default function Footer() {
               className="w-[20px] h-auto"
             />
           </button>
-          <button>
+          <button onClick={() => {setOpenApproveModal(4)}}>
             <Image
               src={"/icon/footer/twitter.svg"}
               alt="twitter"
@@ -49,7 +52,7 @@ export default function Footer() {
               className="w-[20px] h-auto"
             />
           </button>
-          <button>
+          <button onClick={() => {setOpenApproveModal(5)}}>
             <Image
               src={"/icon/footer/youtube.svg"}
               alt="youtube"

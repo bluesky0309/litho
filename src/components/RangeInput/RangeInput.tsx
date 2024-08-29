@@ -32,25 +32,3 @@ const RangeSlider = (props: RangeInputProps) => {
 };
 
 export default RangeSlider;
-
-// import { RangeInputProps } from "@/types";
-// import "./RangeInput.css"
-// export default function RangeInput(props: RangeInputProps) {
-//   return (
-//     <>
-//     <div className="range">
-//       <input type="range" className="w-full h-[20px] bg-[#FFFFFF4D] appearance-none"/>
-//       <input
-//         type="range"
-//         className="w-full slider appearance-none bg-transparent"
-//         aria-orientation="horizontal"
-//         value={props.stakePeriod}
-//         onChange={(e) => {props.setStakePeriod(parseInt(e.target.value))}}
-//         max={100}
-//         min={1}
-//         step={1}
-//       />
-//       </div>
-//     </>
-//   );
-// }

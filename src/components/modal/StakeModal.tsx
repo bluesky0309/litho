@@ -20,21 +20,25 @@ export default function StakeModal(props: StakeModalProps) {
   const [openDropDown, setOpenDropDown] = useState(false);
   const { chain } = useChainContext();
   const handleStake = () => {
-    if (amount === "") {
-      toast.error("Please Input Stake Amount");
+    if (Number(amount) === 0) {
+      toast.error("The stake amount must be greater than 0.");
     } else {
-      const stake = {
-        amount: parseFloat(amount),
-        stakePeriod: stakePeriod,
-        lp: lp,
-        multiply: 1.5,
-        reward: 1400,
-        coin: coin,
-      };
-      props.setActiveStakes([...props.activeStakes, stake]);
-      setAmount("");
-      setStakePeriod(0);
-      props.setStakeModal(false);
+      if (stakePeriod === 0) {
+        toast.error("The stake period must be greater than 0.");
+      } else {
+        const stake = {
+          amount: parseFloat(amount),
+          stakePeriod: stakePeriod,
+          lp: lp,
+          multiply: 1.5,
+          reward: 1400,
+          coin: coin,
+        };
+        props.setActiveStakes([...props.activeStakes, stake]);
+        setAmount("");
+        setStakePeriod(0);
+        props.setStakeModal(false);
+      }
     }
   };
   useEffect(() => {
